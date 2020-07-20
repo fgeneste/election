@@ -1,0 +1,105 @@
+{
+  "name": "Parpol",
+  "fields": [
+    {
+      "fieldName": "tenpolcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typparpolcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typorgcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "eveobs",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgart",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgnumtri",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orgdatfin",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "orgnumtie",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgurlsim",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgurlcmp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgtemannu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evetempub",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "syscredat",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "syscrelog",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sysmajdat",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "sysmajlog",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evelil",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evelib",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evelic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "temvalcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgdatcre",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200720093114",
+  "entityTableName": "parpol",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,122 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="elu">
+            <h2><span>Elu</span> {{ elu.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Libelle Departement</span></dt>
+                <dd>
+                    <span>{{ elu.libelleDepartement }}</span>
+                </dd>
+                <dt><span>Numero Depot</span></dt>
+                <dd>
+                    <span>{{ elu.numeroDepot }}</span>
+                </dd>
+                <dt><span>Numero Depot Liste</span></dt>
+                <dd>
+                    <span>{{ elu.numeroDepotListe }}</span>
+                </dd>
+                <dt><span>Libelle Liste</span></dt>
+                <dd>
+                    <span>{{ elu.libelleListe }}</span>
+                </dd>
+                <dt><span>No Ordre Liste</span></dt>
+                <dd>
+                    <span>{{ elu.noOrdreListe }}</span>
+                </dd>
+                <dt><span>Sexe</span></dt>
+                <dd>
+                    <span>{{ elu.sexe }}</span>
+                </dd>
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{ elu.nom }}</span>
+                </dd>
+                <dt><span>Prenom</span></dt>
+                <dd>
+                    <span>{{ elu.prenom }}</span>
+                </dd>
+                <dt><span>Date Naissance</span></dt>
+                <dd>
+                    <span>{{ elu.dateNaissance }}</span>
+                </dd>
+                <dt><span>Nuance</span></dt>
+                <dd>
+                    <span>{{ elu.nuance }}</span>
+                </dd>
+                <dt><span>Profession</span></dt>
+                <dd>
+                    <span>{{ elu.profession }}</span>
+                </dd>
+                <dt><span>Personnalite</span></dt>
+                <dd>
+                    <span>{{ elu.personnalite }}</span>
+                </dd>
+                <dt><span>Sortant</span></dt>
+                <dd>
+                    <span>{{ elu.sortant }}</span>
+                </dd>
+                <dt><span>Sexe Supp</span></dt>
+                <dd>
+                    <span>{{ elu.sexeSupp }}</span>
+                </dd>
+                <dt><span>Nom Supp</span></dt>
+                <dd>
+                    <span>{{ elu.nomSupp }}</span>
+                </dd>
+                <dt><span>Prenom Supp</span></dt>
+                <dd>
+                    <span>{{ elu.prenomSupp }}</span>
+                </dd>
+                <dt><span>Date Naissance Supp</span></dt>
+                <dd>
+                    <span>{{ elu.dateNaissanceSupp }}</span>
+                </dd>
+                <dt><span>Tour Election</span></dt>
+                <dd>
+                    <span>{{ elu.tourElection }}</span>
+                </dd>
+                <dt><span>Elusen</span></dt>
+                <dd>
+                    <div *ngIf="elu.elusen">
+                        <a [routerLink]="['/sen', elu.elusen?.id, 'view']">{{ elu.elusen?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Suppleantsen</span></dt>
+                <dd>
+                    <div *ngIf="elu.suppleantsen">
+                        <a [routerLink]="['/sen', elu.suppleantsen?.id, 'view']">{{ elu.suppleantsen?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Csp</span></dt>
+                <dd>
+                    <div *ngIf="elu.csp">
+                        <a [routerLink]="['/csp', elu.csp?.id, 'view']">{{ elu.csp?.cspcod }}</a>
+                    </div>
+                </dd>
+                <dt><span>Dpt</span></dt>
+                <dd>
+                    <div *ngIf="elu.dpt">
+                        <a [routerLink]="['/dpt', elu.dpt?.id, 'view']">{{ elu.dpt?.dptnum }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/elu', elu.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

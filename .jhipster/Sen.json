@@ -1,0 +1,229 @@
+{
+  "name": "Sen",
+  "fields": [
+    {
+      "fieldName": "senmat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quacod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sennomuse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sennompat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sennommar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sennomtec",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senprenomuse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senprenomciv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sendatnai",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "senlienai",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sendatdec",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "etasencod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sendespro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pcscod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catprocod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senrngprt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sengrppolcodcou",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sengrppolliccou",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sentypappcou",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sencomcodcou",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sencomliccou",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sencirnumcou",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sencircou",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senburliccou",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senema",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sennumtelsen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sendiplome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sendecora",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sendatpreele",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "indid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sennomusecap",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senpagper",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senrngprtcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "parpolorgcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senliedec",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sendptnumnai",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sendptnumdec",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "senauttra",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senlog",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sencrinom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senfem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senautema",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senautgrpsen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senautpagper",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sennbrque",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sennomdis",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numsen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sennumsie",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sennbrvid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sennomdit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "titnobcod",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "association",
+      "otherEntityRelationshipName": "sen",
+      "relationshipName": "association",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200720092814",
+  "entityTableName": "sen",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

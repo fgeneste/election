@@ -1,0 +1,38 @@
+{
+  "name": "Association",
+  "fields": [
+    {
+      "fieldName": "score",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "candidat",
+      "otherEntityRelationshipName": "association",
+      "relationshipName": "candidat",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sen",
+      "otherEntityRelationshipName": "association",
+      "relationshipName": "sen",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20200720093314",
+  "entityTableName": "association",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,341 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-sen-heading">Create or edit a Sen</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senmat">Senmat</label>
+                    <input type="text" class="form-control" name="senmat" id="field_senmat"
+                           formControlName="senmat"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_quacod">Quacod</label>
+                    <input type="text" class="form-control" name="quacod" id="field_quacod"
+                           formControlName="quacod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennomuse">Sennomuse</label>
+                    <input type="text" class="form-control" name="sennomuse" id="field_sennomuse"
+                           formControlName="sennomuse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennompat">Sennompat</label>
+                    <input type="text" class="form-control" name="sennompat" id="field_sennompat"
+                           formControlName="sennompat"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennommar">Sennommar</label>
+                    <input type="text" class="form-control" name="sennommar" id="field_sennommar"
+                           formControlName="sennommar"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennomtec">Sennomtec</label>
+                    <input type="text" class="form-control" name="sennomtec" id="field_sennomtec"
+                           formControlName="sennomtec"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senprenomuse">Senprenomuse</label>
+                    <input type="text" class="form-control" name="senprenomuse" id="field_senprenomuse"
+                           formControlName="senprenomuse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senprenomciv">Senprenomciv</label>
+                    <input type="text" class="form-control" name="senprenomciv" id="field_senprenomciv"
+                           formControlName="senprenomciv"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sendatnai">Sendatnai</label>
+                    <div class="input-group">
+                        <input id="field_sendatnai" type="text" class="form-control" name="sendatnai" ngbDatepicker #sendatnaiDp="ngbDatepicker" formControlName="sendatnai"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="sendatnaiDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senlienai">Senlienai</label>
+                    <input type="text" class="form-control" name="senlienai" id="field_senlienai"
+                           formControlName="senlienai"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sendatdec">Sendatdec</label>
+                    <div class="input-group">
+                        <input id="field_sendatdec" type="text" class="form-control" name="sendatdec" ngbDatepicker #sendatdecDp="ngbDatepicker" formControlName="sendatdec"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="sendatdecDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_etasencod">Etasencod</label>
+                    <input type="text" class="form-control" name="etasencod" id="field_etasencod"
+                           formControlName="etasencod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sendespro">Sendespro</label>
+                    <input type="text" class="form-control" name="sendespro" id="field_sendespro"
+                           formControlName="sendespro"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pcscod">Pcscod</label>
+                    <input type="text" class="form-control" name="pcscod" id="field_pcscod"
+                           formControlName="pcscod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_catprocod">Catprocod</label>
+                    <input type="text" class="form-control" name="catprocod" id="field_catprocod"
+                           formControlName="catprocod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senrngprt">Senrngprt</label>
+                    <input type="number" class="form-control" name="senrngprt" id="field_senrngprt"
+                           formControlName="senrngprt"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sengrppolcodcou">Sengrppolcodcou</label>
+                    <input type="text" class="form-control" name="sengrppolcodcou" id="field_sengrppolcodcou"
+                           formControlName="sengrppolcodcou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sengrppolliccou">Sengrppolliccou</label>
+                    <input type="text" class="form-control" name="sengrppolliccou" id="field_sengrppolliccou"
+                           formControlName="sengrppolliccou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sentypappcou">Sentypappcou</label>
+                    <input type="text" class="form-control" name="sentypappcou" id="field_sentypappcou"
+                           formControlName="sentypappcou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sencomcodcou">Sencomcodcou</label>
+                    <input type="text" class="form-control" name="sencomcodcou" id="field_sencomcodcou"
+                           formControlName="sencomcodcou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sencomliccou">Sencomliccou</label>
+                    <input type="text" class="form-control" name="sencomliccou" id="field_sencomliccou"
+                           formControlName="sencomliccou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sencirnumcou">Sencirnumcou</label>
+                    <input type="number" class="form-control" name="sencirnumcou" id="field_sencirnumcou"
+                           formControlName="sencirnumcou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sencircou">Sencircou</label>
+                    <input type="text" class="form-control" name="sencircou" id="field_sencircou"
+                           formControlName="sencircou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senburliccou">Senburliccou</label>
+                    <input type="text" class="form-control" name="senburliccou" id="field_senburliccou"
+                           formControlName="senburliccou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senema">Senema</label>
+                    <input type="text" class="form-control" name="senema" id="field_senema"
+                           formControlName="senema"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennumtelsen">Sennumtelsen</label>
+                    <input type="text" class="form-control" name="sennumtelsen" id="field_sennumtelsen"
+                           formControlName="sennumtelsen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sendiplome">Sendiplome</label>
+                    <input type="text" class="form-control" name="sendiplome" id="field_sendiplome"
+                           formControlName="sendiplome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sendecora">Sendecora</label>
+                    <input type="text" class="form-control" name="sendecora" id="field_sendecora"
+                           formControlName="sendecora"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sendatpreele">Sendatpreele</label>
+                    <div class="d-flex">
+                        <input id="field_sendatpreele" type="datetime-local" class="form-control" name="sendatpreele" formControlName="sendatpreele" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_indid">Indid</label>
+                    <input type="number" class="form-control" name="indid" id="field_indid"
+                           formControlName="indid"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennomusecap">Sennomusecap</label>
+                    <input type="text" class="form-control" name="sennomusecap" id="field_sennomusecap"
+                           formControlName="sennomusecap"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senpagper">Senpagper</label>
+                    <input type="text" class="form-control" name="senpagper" id="field_senpagper"
+                           formControlName="senpagper"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senrngprtcod">Senrngprtcod</label>
+                    <input type="text" class="form-control" name="senrngprtcod" id="field_senrngprtcod"
+                           formControlName="senrngprtcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_parpolorgcod">Parpolorgcod</label>
+                    <input type="text" class="form-control" name="parpolorgcod" id="field_parpolorgcod"
+                           formControlName="parpolorgcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senliedec">Senliedec</label>
+                    <input type="text" class="form-control" name="senliedec" id="field_senliedec"
+                           formControlName="senliedec"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sendptnumnai">Sendptnumnai</label>
+                    <input type="number" class="form-control" name="sendptnumnai" id="field_sendptnumnai"
+                           formControlName="sendptnumnai"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sendptnumdec">Sendptnumdec</label>
+                    <input type="number" class="form-control" name="sendptnumdec" id="field_sendptnumdec"
+                           formControlName="sendptnumdec"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senauttra">Senauttra</label>
+                    <input type="text" class="form-control" name="senauttra" id="field_senauttra"
+                           formControlName="senauttra"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senlog">Senlog</label>
+                    <input type="text" class="form-control" name="senlog" id="field_senlog"
+                           formControlName="senlog"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sencrinom">Sencrinom</label>
+                    <input type="text" class="form-control" name="sencrinom" id="field_sencrinom"
+                           formControlName="sencrinom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senfem">Senfem</label>
+                    <input type="text" class="form-control" name="senfem" id="field_senfem"
+                           formControlName="senfem"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senautema">Senautema</label>
+                    <input type="text" class="form-control" name="senautema" id="field_senautema"
+                           formControlName="senautema"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senautgrpsen">Senautgrpsen</label>
+                    <input type="text" class="form-control" name="senautgrpsen" id="field_senautgrpsen"
+                           formControlName="senautgrpsen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senautpagper">Senautpagper</label>
+                    <input type="text" class="form-control" name="senautpagper" id="field_senautpagper"
+                           formControlName="senautpagper"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennbrque">Sennbrque</label>
+                    <input type="number" class="form-control" name="sennbrque" id="field_sennbrque"
+                           formControlName="sennbrque"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennomdis">Sennomdis</label>
+                    <input type="text" class="form-control" name="sennomdis" id="field_sennomdis"
+                           formControlName="sennomdis"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numsen">Numsen</label>
+                    <input type="text" class="form-control" name="numsen" id="field_numsen"
+                           formControlName="numsen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennumsie">Sennumsie</label>
+                    <input type="number" class="form-control" name="sennumsie" id="field_sennumsie"
+                           formControlName="sennumsie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennbrvid">Sennbrvid</label>
+                    <input type="number" class="form-control" name="sennbrvid" id="field_sennbrvid"
+                           formControlName="sennbrvid"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sennomdit">Sennomdit</label>
+                    <input type="text" class="form-control" name="sennomdit" id="field_sennomdit"
+                           formControlName="sennomdit"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_titnobcod">Titnobcod</label>
+                    <input type="text" class="form-control" name="titnobcod" id="field_titnobcod"
+                           formControlName="titnobcod"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

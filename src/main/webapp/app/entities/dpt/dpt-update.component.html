@@ -1,0 +1,216 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-dpt-heading">Create or edit a Dpt</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptnum">Dptnum</label>
+                    <input type="text" class="form-control" name="dptnum" id="field_dptnum"
+                           formControlName="dptnum"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptcod">Dptcod</label>
+                    <input type="text" class="form-control" name="dptcod" id="field_dptcod"
+                           formControlName="dptcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptlib">Dptlib</label>
+                    <input type="text" class="form-control" name="dptlib" id="field_dptlib"
+                           formControlName="dptlib"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptnbrsen">Dptnbrsen</label>
+                    <input type="number" class="form-control" name="dptnbrsen" id="field_dptnbrsen"
+                           formControlName="dptnbrsen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptmodscrsen">Dptmodscrsen</label>
+                    <input type="text" class="form-control" name="dptmodscrsen" id="field_dptmodscrsen"
+                           formControlName="dptmodscrsen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptser">Dptser</label>
+                    <input type="text" class="form-control" name="dptser" id="field_dptser"
+                           formControlName="dptser"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_regcod">Regcod</label>
+                    <input type="text" class="form-control" name="regcod" id="field_regcod"
+                           formControlName="regcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptnumtri">Dptnumtri</label>
+                    <input type="number" class="form-control" name="dptnumtri" id="field_dptnumtri"
+                           formControlName="dptnumtri"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptcodsirpas">Dptcodsirpas</label>
+                    <input type="text" class="form-control" name="dptcodsirpas" id="field_dptcodsirpas"
+                           formControlName="dptcodsirpas"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptlic">Dptlic</label>
+                    <input type="text" class="form-control" name="dptlic" id="field_dptlic"
+                           formControlName="dptlic"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptart">Dptart</label>
+                    <input type="text" class="form-control" name="dptart" id="field_dptart"
+                           formControlName="dptart"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptlibtri">Dptlibtri</label>
+                    <input type="text" class="form-control" name="dptlibtri" id="field_dptlibtri"
+                           formControlName="dptlibtri"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_temvalcod">Temvalcod</label>
+                    <input type="text" class="form-control" name="temvalcod" id="field_temvalcod"
+                           formControlName="temvalcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evelic">Evelic</label>
+                    <input type="text" class="form-control" name="evelic" id="field_evelic"
+                           formControlName="evelic"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evelib">Evelib</label>
+                    <input type="text" class="form-control" name="evelib" id="field_evelib"
+                           formControlName="evelib"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evelil">Evelil</label>
+                    <input type="text" class="form-control" name="evelil" id="field_evelil"
+                           formControlName="evelil"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_eveobs">Eveobs</label>
+                    <input type="text" class="form-control" name="eveobs" id="field_eveobs"
+                           formControlName="eveobs"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptser2004">Dptser 2004</label>
+                    <input type="text" class="form-control" name="dptser2004" id="field_dptser2004"
+                           formControlName="dptser2004"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptcmt">Dptcmt</label>
+                    <input type="text" class="form-control" name="dptcmt" id="field_dptcmt"
+                           formControlName="dptcmt"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptcmtaff">Dptcmtaff</label>
+                    <input type="text" class="form-control" name="dptcmtaff" id="field_dptcmtaff"
+                           formControlName="dptcmtaff"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptdatdeb">Dptdatdeb</label>
+                    <div class="input-group">
+                        <input id="field_dptdatdeb" type="text" class="form-control" name="dptdatdeb" ngbDatepicker #dptdatdebDp="ngbDatepicker" formControlName="dptdatdeb"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dptdatdebDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptdatfin">Dptdatfin</label>
+                    <div class="input-group">
+                        <input id="field_dptdatfin" type="text" class="form-control" name="dptdatfin" ngbDatepicker #dptdatfinDp="ngbDatepicker" formControlName="dptdatfin"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dptdatfinDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evetempub">Evetempub</label>
+                    <input type="text" class="form-control" name="evetempub" id="field_evetempub"
+                           formControlName="evetempub"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dpturlcmp">Dpturlcmp</label>
+                    <input type="text" class="form-control" name="dpturlcmp" id="field_dpturlcmp"
+                           formControlName="dpturlcmp"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dptminintcod">Dptminintcod</label>
+                    <input type="text" class="form-control" name="dptminintcod" id="field_dptminintcod"
+                           formControlName="dptminintcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syscredat">Syscredat</label>
+                    <div class="input-group">
+                        <input id="field_syscredat" type="text" class="form-control" name="syscredat" ngbDatepicker #syscredatDp="ngbDatepicker" formControlName="syscredat"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="syscredatDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syscrelog">Syscrelog</label>
+                    <input type="text" class="form-control" name="syscrelog" id="field_syscrelog"
+                           formControlName="syscrelog"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sysmajdat">Sysmajdat</label>
+                    <div class="input-group">
+                        <input id="field_sysmajdat" type="text" class="form-control" name="sysmajdat" ngbDatepicker #sysmajdatDp="ngbDatepicker" formControlName="sysmajdat"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="sysmajdatDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sysmajlog">Sysmajlog</label>
+                    <input type="text" class="form-control" name="sysmajlog" id="field_sysmajlog"
+                           formControlName="sysmajlog"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

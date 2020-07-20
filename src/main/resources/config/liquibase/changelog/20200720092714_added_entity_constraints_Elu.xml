@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Elu.
+    -->
+    <changeSet id="20200720092714-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="elusen_id"
+                                 baseTableName="elu"
+                                 constraintName="fk_elu_elusen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sen"/>
+
+        <addForeignKeyConstraint baseColumnNames="suppleantsen_id"
+                                 baseTableName="elu"
+                                 constraintName="fk_elu_suppleantsen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sen"/>
+
+        <addForeignKeyConstraint baseColumnNames="csp_id"
+                                 baseTableName="elu"
+                                 constraintName="fk_elu_csp_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="csp"/>
+
+        <addForeignKeyConstraint baseColumnNames="dpt_id"
+                                 baseTableName="elu"
+                                 constraintName="fk_elu_dpt_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dpt"/>
+
+    </changeSet>
+</databaseChangeLog>

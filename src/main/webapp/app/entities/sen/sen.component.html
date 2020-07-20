@@ -1,0 +1,171 @@
+<div>
+    <h2 id="page-heading">
+        <span>Sens</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-sen" [routerLink]="['/sen/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Sen
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="sens?.length === 0">
+        <span>No sens found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="sens && sens.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senmat"><span>Senmat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="quacod"><span>Quacod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennomuse"><span>Sennomuse</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennompat"><span>Sennompat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennommar"><span>Sennommar</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennomtec"><span>Sennomtec</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senprenomuse"><span>Senprenomuse</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senprenomciv"><span>Senprenomciv</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sendatnai"><span>Sendatnai</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senlienai"><span>Senlienai</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sendatdec"><span>Sendatdec</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etasencod"><span>Etasencod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sendespro"><span>Sendespro</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="pcscod"><span>Pcscod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="catprocod"><span>Catprocod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senrngprt"><span>Senrngprt</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sengrppolcodcou"><span>Sengrppolcodcou</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sengrppolliccou"><span>Sengrppolliccou</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sentypappcou"><span>Sentypappcou</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sencomcodcou"><span>Sencomcodcou</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sencomliccou"><span>Sencomliccou</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sencirnumcou"><span>Sencirnumcou</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sencircou"><span>Sencircou</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senburliccou"><span>Senburliccou</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senema"><span>Senema</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennumtelsen"><span>Sennumtelsen</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sendiplome"><span>Sendiplome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sendecora"><span>Sendecora</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sendatpreele"><span>Sendatpreele</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="indid"><span>Indid</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennomusecap"><span>Sennomusecap</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senpagper"><span>Senpagper</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senrngprtcod"><span>Senrngprtcod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="parpolorgcod"><span>Parpolorgcod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senliedec"><span>Senliedec</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sendptnumnai"><span>Sendptnumnai</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sendptnumdec"><span>Sendptnumdec</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senauttra"><span>Senauttra</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senlog"><span>Senlog</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sencrinom"><span>Sencrinom</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senfem"><span>Senfem</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senautema"><span>Senautema</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senautgrpsen"><span>Senautgrpsen</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="senautpagper"><span>Senautpagper</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennbrque"><span>Sennbrque</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennomdis"><span>Sennomdis</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numsen"><span>Numsen</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennumsie"><span>Sennumsie</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennbrvid"><span>Sennbrvid</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sennomdit"><span>Sennomdit</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titnobcod"><span>Titnobcod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sen of sens ;trackBy: trackId">
+                    <td><a [routerLink]="['/sen', sen.id, 'view']">{{ sen.id }}</a></td>
+                    <td>{{ sen.senmat }}</td>
+                    <td>{{ sen.quacod }}</td>
+                    <td>{{ sen.sennomuse }}</td>
+                    <td>{{ sen.sennompat }}</td>
+                    <td>{{ sen.sennommar }}</td>
+                    <td>{{ sen.sennomtec }}</td>
+                    <td>{{ sen.senprenomuse }}</td>
+                    <td>{{ sen.senprenomciv }}</td>
+                    <td>{{ sen.sendatnai | date:'mediumDate' }}</td>
+                    <td>{{ sen.senlienai }}</td>
+                    <td>{{ sen.sendatdec | date:'mediumDate' }}</td>
+                    <td>{{ sen.etasencod }}</td>
+                    <td>{{ sen.sendespro }}</td>
+                    <td>{{ sen.pcscod }}</td>
+                    <td>{{ sen.catprocod }}</td>
+                    <td>{{ sen.senrngprt }}</td>
+                    <td>{{ sen.sengrppolcodcou }}</td>
+                    <td>{{ sen.sengrppolliccou }}</td>
+                    <td>{{ sen.sentypappcou }}</td>
+                    <td>{{ sen.sencomcodcou }}</td>
+                    <td>{{ sen.sencomliccou }}</td>
+                    <td>{{ sen.sencirnumcou }}</td>
+                    <td>{{ sen.sencircou }}</td>
+                    <td>{{ sen.senburliccou }}</td>
+                    <td>{{ sen.senema }}</td>
+                    <td>{{ sen.sennumtelsen }}</td>
+                    <td>{{ sen.sendiplome }}</td>
+                    <td>{{ sen.sendecora }}</td>
+                    <td>{{ sen.sendatpreele | date:'medium' }}</td>
+                    <td>{{ sen.indid }}</td>
+                    <td>{{ sen.sennomusecap }}</td>
+                    <td>{{ sen.senpagper }}</td>
+                    <td>{{ sen.senrngprtcod }}</td>
+                    <td>{{ sen.parpolorgcod }}</td>
+                    <td>{{ sen.senliedec }}</td>
+                    <td>{{ sen.sendptnumnai }}</td>
+                    <td>{{ sen.sendptnumdec }}</td>
+                    <td>{{ sen.senauttra }}</td>
+                    <td>{{ sen.senlog }}</td>
+                    <td>{{ sen.sencrinom }}</td>
+                    <td>{{ sen.senfem }}</td>
+                    <td>{{ sen.senautema }}</td>
+                    <td>{{ sen.senautgrpsen }}</td>
+                    <td>{{ sen.senautpagper }}</td>
+                    <td>{{ sen.sennbrque }}</td>
+                    <td>{{ sen.sennomdis }}</td>
+                    <td>{{ sen.numsen }}</td>
+                    <td>{{ sen.sennumsie }}</td>
+                    <td>{{ sen.sennbrvid }}</td>
+                    <td>{{ sen.sennomdit }}</td>
+                    <td>{{ sen.titnobcod }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/sen', sen.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/sen', sen.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(sen)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="sens && sens.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

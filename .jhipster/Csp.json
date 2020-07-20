@@ -1,0 +1,69 @@
+{
+  "name": "Csp",
+  "fields": [
+    {
+      "fieldName": "cspcod",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "catprocod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cspfamcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "csplib",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cspnumtri",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "syscredat",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "syscrelog",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sysmajdat",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "sysmajlog",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "candidat",
+      "otherEntityRelationshipName": "csp",
+      "relationshipName": "candidat"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "elu",
+      "otherEntityRelationshipName": "csp",
+      "relationshipName": "elu"
+    }
+  ],
+  "changelogDate": "20200720092514",
+  "entityTableName": "csp",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

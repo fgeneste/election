@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Association.
+    -->
+    <changeSet id="20200720093314-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="candidat_id"
+                                 baseTableName="association"
+                                 constraintName="fk_association_candidat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="candidat"/>
+
+        <addForeignKeyConstraint baseColumnNames="sen_id"
+                                 baseTableName="association"
+                                 constraintName="fk_association_sen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sen"/>
+
+    </changeSet>
+</databaseChangeLog>

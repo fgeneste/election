@@ -1,0 +1,78 @@
+{
+  "name": "ResultatDetaille",
+  "fields": [
+    {
+      "fieldName": "noDepot",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sexe",
+      "fieldType": "Sexe",
+      "fieldValues": "M,F"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nuance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resultatCandidat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nuanceListe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelleListe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "teteListe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "voix",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "voixOnIns",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "voixOnExp",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "sieges",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "resultat",
+      "otherEntityRelationshipName": "resultatDetaille",
+      "relationshipName": "resultat",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200720093014",
+  "entityTableName": "resultat_detaille",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

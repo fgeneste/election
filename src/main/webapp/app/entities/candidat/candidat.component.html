@@ -1,0 +1,125 @@
+<div>
+    <h2 id="page-heading">
+        <span>Candidats</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-candidat" [routerLink]="['/candidat/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Candidat
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="candidats?.length === 0">
+        <span>No candidats found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="candidats && candidats.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="libelleDepartement"><span>Libelle Departement</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numeroDepot"><span>Numero Depot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numeroDepotListe"><span>Numero Depot Liste</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="libelleListe"><span>Libelle Liste</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="noOrdreListe"><span>No Ordre Liste</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sexe"><span>Sexe</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom"><span>Nom</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom"><span>Prenom</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateNaissance"><span>Date Naissance</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nuance"><span>Nuance</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="profession"><span>Profession</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="personnalite"><span>Personnalite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sortant"><span>Sortant</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sexeSupp"><span>Sexe Supp</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nomSupp"><span>Nom Supp</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenomSupp"><span>Prenom Supp</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateNaissanceSupp"><span>Date Naissance Supp</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="isElu"><span>Is Elu</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="candidatreconnu.id"><span>Candidatreconnu</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="suppleantreconnu.id"><span>Suppleantreconnu</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="elu.id"><span>Elu</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="csp.cspcod"><span>Csp</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dpt.dptnum"><span>Dpt</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let candidat of candidats ;trackBy: trackId">
+                    <td><a [routerLink]="['/candidat', candidat.id, 'view']">{{ candidat.id }}</a></td>
+                    <td>{{ candidat.libelleDepartement }}</td>
+                    <td>{{ candidat.numeroDepot }}</td>
+                    <td>{{ candidat.numeroDepotListe }}</td>
+                    <td>{{ candidat.libelleListe }}</td>
+                    <td>{{ candidat.noOrdreListe }}</td>
+                    <td>{{ candidat.sexe }}</td>
+                    <td>{{ candidat.nom }}</td>
+                    <td>{{ candidat.prenom }}</td>
+                    <td>{{ candidat.dateNaissance | date:'mediumDate' }}</td>
+                    <td>{{ candidat.nuance }}</td>
+                    <td>{{ candidat.profession }}</td>
+                    <td>{{ candidat.personnalite }}</td>
+                    <td>{{ candidat.sortant }}</td>
+                    <td>{{ candidat.sexeSupp }}</td>
+                    <td>{{ candidat.nomSupp }}</td>
+                    <td>{{ candidat.prenomSupp }}</td>
+                    <td>{{ candidat.dateNaissanceSupp | date:'mediumDate' }}</td>
+                    <td>{{ candidat.isElu }}</td>
+                    <td>
+                        <div *ngIf="candidat.candidatreconnu">
+                            <a [routerLink]="['/sen', candidat.candidatreconnu?.id, 'view']" >{{ candidat.candidatreconnu?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="candidat.suppleantreconnu">
+                            <a [routerLink]="['/sen', candidat.suppleantreconnu?.id, 'view']" >{{ candidat.suppleantreconnu?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="candidat.elu">
+                            <a [routerLink]="['/elu', candidat.elu?.id, 'view']" >{{ candidat.elu?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="candidat.csp">
+                            <a [routerLink]="['/csp', candidat.csp?.id, 'view']" >{{ candidat.csp?.cspcod }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="candidat.dpt">
+                            <a [routerLink]="['/dpt', candidat.dpt?.id, 'view']" >{{ candidat.dpt?.dptnum }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/candidat', candidat.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/candidat', candidat.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(candidat)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

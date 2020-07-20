@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity Dpt.
+    -->
+    <changeSet id="20200720092614-1" author="jhipster">
+        <createTable tableName="dpt">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="dptnum" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptcod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptlib" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptnbrsen" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptmodscrsen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptser" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="regcod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptnumtri" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptcodsirpas" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptlic" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptart" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptlibtri" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="temvalcod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="evelic" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="evelib" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="evelil" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="eveobs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptser_2004" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptcmt" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptcmtaff" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptdatdeb" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptdatfin" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="evetempub" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dpturlcmp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dptminintcod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="syscredat" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="syscrelog" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sysmajdat" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="sysmajlog" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200720092614-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200720092614-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/dpt.csv"
+                  separator=";"
+                  tableName="dpt">
+            <column name="id" type="numeric"/>
+            <column name="dptnum" type="string"/>
+            <column name="dptcod" type="string"/>
+            <column name="dptlib" type="string"/>
+            <column name="dptnbrsen" type="numeric"/>
+            <column name="dptmodscrsen" type="string"/>
+            <column name="dptser" type="string"/>
+            <column name="regcod" type="string"/>
+            <column name="dptnumtri" type="numeric"/>
+            <column name="dptcodsirpas" type="string"/>
+            <column name="dptlic" type="string"/>
+            <column name="dptart" type="string"/>
+            <column name="dptlibtri" type="string"/>
+            <column name="temvalcod" type="string"/>
+            <column name="evelic" type="string"/>
+            <column name="evelib" type="string"/>
+            <column name="evelil" type="string"/>
+            <column name="eveobs" type="string"/>
+            <column name="dptser_2004" type="string"/>
+            <column name="dptcmt" type="string"/>
+            <column name="dptcmtaff" type="string"/>
+            <column name="dptdatdeb" type="date"/>
+            <column name="dptdatfin" type="date"/>
+            <column name="evetempub" type="string"/>
+            <column name="dpturlcmp" type="string"/>
+            <column name="dptminintcod" type="string"/>
+            <column name="syscredat" type="date"/>
+            <column name="syscrelog" type="string"/>
+            <column name="sysmajdat" type="date"/>
+            <column name="sysmajlog" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

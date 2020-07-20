@@ -1,0 +1,138 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-resultat-heading">Create or edit a Resultat</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateExport">Date Export</label>
+                    <div class="input-group">
+                        <input id="field_dateExport" type="text" class="form-control" name="dateExport" ngbDatepicker #dateExportDp="ngbDatepicker" formControlName="dateExport"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateExportDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numeroDepartement">Numero Departement</label>
+                    <input type="text" class="form-control" name="numeroDepartement" id="field_numeroDepartement"
+                           formControlName="numeroDepartement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_libelleDepartement">Libelle Departement</label>
+                    <input type="text" class="form-control" name="libelleDepartement" id="field_libelleDepartement"
+                           formControlName="libelleDepartement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_noTour">No Tour</label>
+                    <input type="text" class="form-control" name="noTour" id="field_noTour"
+                           formControlName="noTour"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_inscrits">Inscrits</label>
+                    <input type="number" class="form-control" name="inscrits" id="field_inscrits"
+                           formControlName="inscrits"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_abstentions">Abstentions</label>
+                    <input type="number" class="form-control" name="abstentions" id="field_abstentions"
+                           formControlName="abstentions"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_absOnIns">Abs On Ins</label>
+                    <input type="number" class="form-control" name="absOnIns" id="field_absOnIns"
+                           formControlName="absOnIns"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_votants">Votants</label>
+                    <input type="number" class="form-control" name="votants" id="field_votants"
+                           formControlName="votants"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_votOnIns">Vot On Ins</label>
+                    <input type="number" class="form-control" name="votOnIns" id="field_votOnIns"
+                           formControlName="votOnIns"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_blancs">Blancs</label>
+                    <input type="number" class="form-control" name="blancs" id="field_blancs"
+                           formControlName="blancs"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_blancsOnIns">Blancs On Ins</label>
+                    <input type="number" class="form-control" name="blancsOnIns" id="field_blancsOnIns"
+                           formControlName="blancsOnIns"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_blancsOnVot">Blancs On Vot</label>
+                    <input type="number" class="form-control" name="blancsOnVot" id="field_blancsOnVot"
+                           formControlName="blancsOnVot"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nuls">Nuls</label>
+                    <input type="number" class="form-control" name="nuls" id="field_nuls"
+                           formControlName="nuls"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nulsOnIns">Nuls On Ins</label>
+                    <input type="number" class="form-control" name="nulsOnIns" id="field_nulsOnIns"
+                           formControlName="nulsOnIns"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nulsOnVot">Nuls On Vot</label>
+                    <input type="number" class="form-control" name="nulsOnVot" id="field_nulsOnVot"
+                           formControlName="nulsOnVot"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_exprime">Exprime</label>
+                    <input type="number" class="form-control" name="exprime" id="field_exprime"
+                           formControlName="exprime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_expOnIns">Exp On Ins</label>
+                    <input type="number" class="form-control" name="expOnIns" id="field_expOnIns"
+                           formControlName="expOnIns"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_expOnVot">Exp On Vot</label>
+                    <input type="number" class="form-control" name="expOnVot" id="field_expOnVot"
+                           formControlName="expOnVot"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

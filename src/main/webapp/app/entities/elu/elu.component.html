@@ -1,0 +1,119 @@
+<div>
+    <h2 id="page-heading">
+        <span>Elus</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-elu" [routerLink]="['/elu/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Elu
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="elus?.length === 0">
+        <span>No elus found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="elus && elus.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Libelle Departement</span></th>
+                    <th scope="col" ><span>Numero Depot</span></th>
+                    <th scope="col" ><span>Numero Depot Liste</span></th>
+                    <th scope="col" ><span>Libelle Liste</span></th>
+                    <th scope="col" ><span>No Ordre Liste</span></th>
+                    <th scope="col" ><span>Sexe</span></th>
+                    <th scope="col" ><span>Nom</span></th>
+                    <th scope="col" ><span>Prenom</span></th>
+                    <th scope="col" ><span>Date Naissance</span></th>
+                    <th scope="col" ><span>Nuance</span></th>
+                    <th scope="col" ><span>Profession</span></th>
+                    <th scope="col" ><span>Personnalite</span></th>
+                    <th scope="col" ><span>Sortant</span></th>
+                    <th scope="col" ><span>Sexe Supp</span></th>
+                    <th scope="col" ><span>Nom Supp</span></th>
+                    <th scope="col" ><span>Prenom Supp</span></th>
+                    <th scope="col" ><span>Date Naissance Supp</span></th>
+                    <th scope="col" ><span>Tour Election</span></th>
+                    <th scope="col" ><span>Elusen</span></th>
+                    <th scope="col" ><span>Suppleantsen</span></th>
+                    <th scope="col" ><span>Csp</span></th>
+                    <th scope="col" ><span>Dpt</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let elu of elus ;trackBy: trackId">
+                    <td><a [routerLink]="['/elu', elu.id, 'view']">{{ elu.id }}</a></td>
+                    <td>{{ elu.libelleDepartement }}</td>
+                    <td>{{ elu.numeroDepot }}</td>
+                    <td>{{ elu.numeroDepotListe }}</td>
+                    <td>{{ elu.libelleListe }}</td>
+                    <td>{{ elu.noOrdreListe }}</td>
+                    <td>{{ elu.sexe }}</td>
+                    <td>{{ elu.nom }}</td>
+                    <td>{{ elu.prenom }}</td>
+                    <td>{{ elu.dateNaissance | date:'mediumDate' }}</td>
+                    <td>{{ elu.nuance }}</td>
+                    <td>{{ elu.profession }}</td>
+                    <td>{{ elu.personnalite }}</td>
+                    <td>{{ elu.sortant }}</td>
+                    <td>{{ elu.sexeSupp }}</td>
+                    <td>{{ elu.nomSupp }}</td>
+                    <td>{{ elu.prenomSupp }}</td>
+                    <td>{{ elu.dateNaissanceSupp | date:'mediumDate' }}</td>
+                    <td>{{ elu.tourElection }}</td>
+                    <td>
+                        <div *ngIf="elu.elusen">
+                            <a [routerLink]="['/sen', elu.elusen?.id, 'view']" >{{ elu.elusen?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="elu.suppleantsen">
+                            <a [routerLink]="['/sen', elu.suppleantsen?.id, 'view']" >{{ elu.suppleantsen?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="elu.csp">
+                            <a [routerLink]="['/csp', elu.csp?.id, 'view']" >{{ elu.csp?.cspcod }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="elu.dpt">
+                            <a [routerLink]="['/dpt', elu.dpt?.id, 'view']" >{{ elu.dpt?.dptnum }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/elu', elu.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/elu', elu.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(elu)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

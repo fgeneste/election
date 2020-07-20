@@ -1,0 +1,128 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="candidat">
+            <h2><span>Candidat</span> {{ candidat.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Libelle Departement</span></dt>
+                <dd>
+                    <span>{{ candidat.libelleDepartement }}</span>
+                </dd>
+                <dt><span>Numero Depot</span></dt>
+                <dd>
+                    <span>{{ candidat.numeroDepot }}</span>
+                </dd>
+                <dt><span>Numero Depot Liste</span></dt>
+                <dd>
+                    <span>{{ candidat.numeroDepotListe }}</span>
+                </dd>
+                <dt><span>Libelle Liste</span></dt>
+                <dd>
+                    <span>{{ candidat.libelleListe }}</span>
+                </dd>
+                <dt><span>No Ordre Liste</span></dt>
+                <dd>
+                    <span>{{ candidat.noOrdreListe }}</span>
+                </dd>
+                <dt><span>Sexe</span></dt>
+                <dd>
+                    <span>{{ candidat.sexe }}</span>
+                </dd>
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{ candidat.nom }}</span>
+                </dd>
+                <dt><span>Prenom</span></dt>
+                <dd>
+                    <span>{{ candidat.prenom }}</span>
+                </dd>
+                <dt><span>Date Naissance</span></dt>
+                <dd>
+                    <span>{{ candidat.dateNaissance }}</span>
+                </dd>
+                <dt><span>Nuance</span></dt>
+                <dd>
+                    <span>{{ candidat.nuance }}</span>
+                </dd>
+                <dt><span>Profession</span></dt>
+                <dd>
+                    <span>{{ candidat.profession }}</span>
+                </dd>
+                <dt><span>Personnalite</span></dt>
+                <dd>
+                    <span>{{ candidat.personnalite }}</span>
+                </dd>
+                <dt><span>Sortant</span></dt>
+                <dd>
+                    <span>{{ candidat.sortant }}</span>
+                </dd>
+                <dt><span>Sexe Supp</span></dt>
+                <dd>
+                    <span>{{ candidat.sexeSupp }}</span>
+                </dd>
+                <dt><span>Nom Supp</span></dt>
+                <dd>
+                    <span>{{ candidat.nomSupp }}</span>
+                </dd>
+                <dt><span>Prenom Supp</span></dt>
+                <dd>
+                    <span>{{ candidat.prenomSupp }}</span>
+                </dd>
+                <dt><span>Date Naissance Supp</span></dt>
+                <dd>
+                    <span>{{ candidat.dateNaissanceSupp }}</span>
+                </dd>
+                <dt><span>Is Elu</span></dt>
+                <dd>
+                    <span>{{ candidat.isElu }}</span>
+                </dd>
+                <dt><span>Candidatreconnu</span></dt>
+                <dd>
+                    <div *ngIf="candidat.candidatreconnu">
+                        <a [routerLink]="['/sen', candidat.candidatreconnu?.id, 'view']">{{ candidat.candidatreconnu?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Suppleantreconnu</span></dt>
+                <dd>
+                    <div *ngIf="candidat.suppleantreconnu">
+                        <a [routerLink]="['/sen', candidat.suppleantreconnu?.id, 'view']">{{ candidat.suppleantreconnu?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Elu</span></dt>
+                <dd>
+                    <div *ngIf="candidat.elu">
+                        <a [routerLink]="['/elu', candidat.elu?.id, 'view']">{{ candidat.elu?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Csp</span></dt>
+                <dd>
+                    <div *ngIf="candidat.csp">
+                        <a [routerLink]="['/csp', candidat.csp?.id, 'view']">{{ candidat.csp?.cspcod }}</a>
+                    </div>
+                </dd>
+                <dt><span>Dpt</span></dt>
+                <dd>
+                    <div *ngIf="candidat.dpt">
+                        <a [routerLink]="['/dpt', candidat.dpt?.id, 'view']">{{ candidat.dpt?.dptnum }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/candidat', candidat.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

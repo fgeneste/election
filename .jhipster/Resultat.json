@@ -1,0 +1,96 @@
+{
+  "name": "Resultat",
+  "fields": [
+    {
+      "fieldName": "dateExport",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "numeroDepartement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelleDepartement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noTour",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "inscrits",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "abstentions",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "absOnIns",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "votants",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "votOnIns",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "blancs",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "blancsOnIns",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "blancsOnVot",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "nuls",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "nulsOnIns",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "nulsOnVot",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "exprime",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "expOnIns",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "expOnVot",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "resultatDetaille",
+      "otherEntityRelationshipName": "resultat",
+      "relationshipName": "resultatDetaille"
+    }
+  ],
+  "changelogDate": "20200720092914",
+  "entityTableName": "resultat",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
