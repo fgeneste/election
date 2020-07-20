@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity Candidat.
+    -->
+    <changeSet id="20200720092314-1" author="jhipster">
+        <createTable tableName="candidat">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="libelle_departement" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="numero_depot" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="numero_depot_liste" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="libelle_liste" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="no_ordre_liste" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sexe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="prenom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_naissance" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="nuance" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="profession" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="personnalite" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sortant" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="sexe_supp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nom_supp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="prenom_supp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_naissance_supp" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_elu" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="candidatreconnu_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_candidat_candidatreconnu_id" />
+            </column>
+            <column name="suppleantreconnu_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_candidat_suppleantreconnu_id" />
+            </column>
+            <column name="elu_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_candidat_elu_id" />
+            </column>
+            <column name="csp_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="dpt_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200720092314-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200720092314-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/candidat.csv"
+                  separator=";"
+                  tableName="candidat">
+            <column name="id" type="numeric"/>
+            <column name="libelle_departement" type="string"/>
+            <column name="numero_depot" type="numeric"/>
+            <column name="numero_depot_liste" type="numeric"/>
+            <column name="libelle_liste" type="string"/>
+            <column name="no_ordre_liste" type="numeric"/>
+            <column name="sexe" type="string"/>
+            <column name="nom" type="string"/>
+            <column name="prenom" type="string"/>
+            <column name="date_naissance" type="date"/>
+            <column name="nuance" type="string"/>
+            <column name="profession" type="string"/>
+            <column name="personnalite" type="string"/>
+            <column name="sortant" type="boolean"/>
+            <column name="sexe_supp" type="string"/>
+            <column name="nom_supp" type="string"/>
+            <column name="prenom_supp" type="string"/>
+            <column name="date_naissance_supp" type="date"/>
+            <column name="is_elu" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

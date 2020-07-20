@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="association">
+            <h2><span>Association</span> {{ association.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Score</span></dt>
+                <dd>
+                    <span>{{ association.score }}</span>
+                </dd>
+                <dt><span>Candidat</span></dt>
+                <dd>
+                    <div *ngIf="association.candidat">
+                        <a [routerLink]="['/candidat', association.candidat?.id, 'view']">{{ association.candidat?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Sen</span></dt>
+                <dd>
+                    <div *ngIf="association.sen">
+                        <a [routerLink]="['/sen', association.sen?.id, 'view']">{{ association.sen?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/association', association.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

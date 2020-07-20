@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span>Csps</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-csp" [routerLink]="['/csp/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Csp
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="csps?.length === 0">
+        <span>No csps found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="csps && csps.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cspcod"><span>Cspcod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="catprocod"><span>Catprocod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cspfamcod"><span>Cspfamcod</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="csplib"><span>Csplib</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cspnumtri"><span>Cspnumtri</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="syscredat"><span>Syscredat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="syscrelog"><span>Syscrelog</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sysmajdat"><span>Sysmajdat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sysmajlog"><span>Sysmajlog</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let csp of csps ;trackBy: trackId">
+                    <td><a [routerLink]="['/csp', csp.id, 'view']">{{ csp.id }}</a></td>
+                    <td>{{ csp.cspcod }}</td>
+                    <td>{{ csp.catprocod }}</td>
+                    <td>{{ csp.cspfamcod }}</td>
+                    <td>{{ csp.csplib }}</td>
+                    <td>{{ csp.cspnumtri }}</td>
+                    <td>{{ csp.syscredat | date:'mediumDate' }}</td>
+                    <td>{{ csp.syscrelog }}</td>
+                    <td>{{ csp.sysmajdat | date:'mediumDate' }}</td>
+                    <td>{{ csp.sysmajlog }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/csp', csp.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/csp', csp.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(csp)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="csps && csps.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

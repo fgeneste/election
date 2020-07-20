@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="foncandid">
+            <h2><span>Foncandid</span> {{ foncandid.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Foncandidcod</span></dt>
+                <dd>
+                    <span>{{ foncandid.foncandidcod }}</span>
+                </dd>
+                <dt><span>Foncandidlibfem</span></dt>
+                <dd>
+                    <span>{{ foncandid.foncandidlibfem }}</span>
+                </dd>
+                <dt><span>Foncandidlib</span></dt>
+                <dd>
+                    <span>{{ foncandid.foncandidlib }}</span>
+                </dd>
+                <dt><span>Foncandidlic</span></dt>
+                <dd>
+                    <span>{{ foncandid.foncandidlic }}</span>
+                </dd>
+                <dt><span>Foncandidlicfem</span></dt>
+                <dd>
+                    <span>{{ foncandid.foncandidlicfem }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/foncandid', foncandid.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

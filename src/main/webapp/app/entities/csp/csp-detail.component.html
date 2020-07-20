@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="csp">
+            <h2><span>Csp</span> {{ csp.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cspcod</span></dt>
+                <dd>
+                    <span>{{ csp.cspcod }}</span>
+                </dd>
+                <dt><span>Catprocod</span></dt>
+                <dd>
+                    <span>{{ csp.catprocod }}</span>
+                </dd>
+                <dt><span>Cspfamcod</span></dt>
+                <dd>
+                    <span>{{ csp.cspfamcod }}</span>
+                </dd>
+                <dt><span>Csplib</span></dt>
+                <dd>
+                    <span>{{ csp.csplib }}</span>
+                </dd>
+                <dt><span>Cspnumtri</span></dt>
+                <dd>
+                    <span>{{ csp.cspnumtri }}</span>
+                </dd>
+                <dt><span>Syscredat</span></dt>
+                <dd>
+                    <span>{{ csp.syscredat }}</span>
+                </dd>
+                <dt><span>Syscrelog</span></dt>
+                <dd>
+                    <span>{{ csp.syscrelog }}</span>
+                </dd>
+                <dt><span>Sysmajdat</span></dt>
+                <dd>
+                    <span>{{ csp.sysmajdat }}</span>
+                </dd>
+                <dt><span>Sysmajlog</span></dt>
+                <dd>
+                    <span>{{ csp.sysmajlog }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/csp', csp.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

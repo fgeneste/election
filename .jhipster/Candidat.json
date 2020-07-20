@@ -1,0 +1,136 @@
+{
+  "name": "Candidat",
+  "fields": [
+    {
+      "fieldName": "libelleDepartement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroDepot",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "numeroDepotListe",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "libelleListe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noOrdreListe",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sexe",
+      "fieldType": "Sexe",
+      "fieldValues": "M,F"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateNaissance",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "nuance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "profession",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "personnalite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sortant",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "sexeSupp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomSupp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenomSupp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateNaissanceSupp",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "isElu",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sen",
+      "otherEntityRelationshipName": "candidat",
+      "relationshipName": "candidatreconnu",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sen",
+      "otherEntityRelationshipName": "candidat",
+      "relationshipName": "suppleantreconnu",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "elu",
+      "otherEntityRelationshipName": "candidat",
+      "relationshipName": "elu",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "association",
+      "otherEntityRelationshipName": "candidat",
+      "relationshipName": "association",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "csp",
+      "otherEntityRelationshipName": "candidat",
+      "relationshipName": "csp",
+      "otherEntityField": "cspcod"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "dpt",
+      "otherEntityRelationshipName": "candidat",
+      "relationshipName": "dpt",
+      "otherEntityField": "dptnum"
+    }
+  ],
+  "changelogDate": "20200720092314",
+  "entityTableName": "candidat",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

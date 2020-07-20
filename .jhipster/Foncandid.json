@@ -1,0 +1,37 @@
+{
+  "name": "Foncandid",
+  "fields": [
+    {
+      "fieldName": "foncandidcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "foncandidlibfem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "foncandidlib",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "foncandidlic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "foncandidlicfem",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200720093214",
+  "entityTableName": "foncandid",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

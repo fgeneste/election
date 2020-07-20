@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity Sen.
+    -->
+    <changeSet id="20200720092814-1" author="jhipster">
+        <createTable tableName="sen">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="senmat" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="quacod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennomuse" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennompat" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennommar" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennomtec" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senprenomuse" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senprenomciv" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sendatnai" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="senlienai" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sendatdec" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="etasencod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sendespro" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pcscod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="catprocod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senrngprt" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sengrppolcodcou" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sengrppolliccou" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sentypappcou" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sencomcodcou" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sencomliccou" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sencirnumcou" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sencircou" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senburliccou" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senema" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennumtelsen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sendiplome" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sendecora" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sendatpreele" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="indid" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennomusecap" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senpagper" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senrngprtcod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="parpolorgcod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senliedec" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sendptnumnai" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sendptnumdec" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="senauttra" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senlog" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sencrinom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senfem" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senautema" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senautgrpsen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="senautpagper" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennbrque" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennomdis" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="numsen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennumsie" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennbrvid" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sennomdit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="titnobcod" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="sen" columnName="sendatpreele" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20200720092814-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200720092814-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/sen.csv"
+                  separator=";"
+                  tableName="sen">
+            <column name="id" type="numeric"/>
+            <column name="senmat" type="string"/>
+            <column name="quacod" type="string"/>
+            <column name="sennomuse" type="string"/>
+            <column name="sennompat" type="string"/>
+            <column name="sennommar" type="string"/>
+            <column name="sennomtec" type="string"/>
+            <column name="senprenomuse" type="string"/>
+            <column name="senprenomciv" type="string"/>
+            <column name="sendatnai" type="date"/>
+            <column name="senlienai" type="string"/>
+            <column name="sendatdec" type="date"/>
+            <column name="etasencod" type="string"/>
+            <column name="sendespro" type="string"/>
+            <column name="pcscod" type="string"/>
+            <column name="catprocod" type="string"/>
+            <column name="senrngprt" type="numeric"/>
+            <column name="sengrppolcodcou" type="string"/>
+            <column name="sengrppolliccou" type="string"/>
+            <column name="sentypappcou" type="string"/>
+            <column name="sencomcodcou" type="string"/>
+            <column name="sencomliccou" type="string"/>
+            <column name="sencirnumcou" type="numeric"/>
+            <column name="sencircou" type="string"/>
+            <column name="senburliccou" type="string"/>
+            <column name="senema" type="string"/>
+            <column name="sennumtelsen" type="string"/>
+            <column name="sendiplome" type="string"/>
+            <column name="sendecora" type="string"/>
+            <column name="sendatpreele" type="datetime"/>
+            <column name="indid" type="numeric"/>
+            <column name="sennomusecap" type="string"/>
+            <column name="senpagper" type="string"/>
+            <column name="senrngprtcod" type="string"/>
+            <column name="parpolorgcod" type="string"/>
+            <column name="senliedec" type="string"/>
+            <column name="sendptnumnai" type="numeric"/>
+            <column name="sendptnumdec" type="numeric"/>
+            <column name="senauttra" type="string"/>
+            <column name="senlog" type="string"/>
+            <column name="sencrinom" type="string"/>
+            <column name="senfem" type="string"/>
+            <column name="senautema" type="string"/>
+            <column name="senautgrpsen" type="string"/>
+            <column name="senautpagper" type="string"/>
+            <column name="sennbrque" type="numeric"/>
+            <column name="sennomdis" type="string"/>
+            <column name="numsen" type="string"/>
+            <column name="sennumsie" type="numeric"/>
+            <column name="sennbrvid" type="numeric"/>
+            <column name="sennomdit" type="string"/>
+            <column name="titnobcod" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

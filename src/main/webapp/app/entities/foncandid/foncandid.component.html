@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span>Foncandids</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-foncandid" [routerLink]="['/foncandid/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Foncandid
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="foncandids?.length === 0">
+        <span>No foncandids found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="foncandids && foncandids.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Foncandidcod</span></th>
+                    <th scope="col" ><span>Foncandidlibfem</span></th>
+                    <th scope="col" ><span>Foncandidlib</span></th>
+                    <th scope="col" ><span>Foncandidlic</span></th>
+                    <th scope="col" ><span>Foncandidlicfem</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let foncandid of foncandids ;trackBy: trackId">
+                    <td><a [routerLink]="['/foncandid', foncandid.id, 'view']">{{ foncandid.id }}</a></td>
+                    <td>{{ foncandid.foncandidcod }}</td>
+                    <td>{{ foncandid.foncandidlibfem }}</td>
+                    <td>{{ foncandid.foncandidlib }}</td>
+                    <td>{{ foncandid.foncandidlic }}</td>
+                    <td>{{ foncandid.foncandidlicfem }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/foncandid', foncandid.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/foncandid', foncandid.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(foncandid)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

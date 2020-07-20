@@ -1,0 +1,176 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-elu-heading">Create or edit a Elu</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_libelleDepartement">Libelle Departement</label>
+                    <input type="text" class="form-control" name="libelleDepartement" id="field_libelleDepartement"
+                           formControlName="libelleDepartement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numeroDepot">Numero Depot</label>
+                    <input type="number" class="form-control" name="numeroDepot" id="field_numeroDepot"
+                           formControlName="numeroDepot"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numeroDepotListe">Numero Depot Liste</label>
+                    <input type="number" class="form-control" name="numeroDepotListe" id="field_numeroDepotListe"
+                           formControlName="numeroDepotListe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_libelleListe">Libelle Liste</label>
+                    <input type="text" class="form-control" name="libelleListe" id="field_libelleListe"
+                           formControlName="libelleListe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_noOrdreListe">No Ordre Liste</label>
+                    <input type="number" class="form-control" name="noOrdreListe" id="field_noOrdreListe"
+                           formControlName="noOrdreListe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sexe">Sexe</label>
+                    <select class="form-control" name="sexe" formControlName="sexe" id="field_sexe">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prenom">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" id="field_prenom"
+                           formControlName="prenom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateNaissance">Date Naissance</label>
+                    <div class="input-group">
+                        <input id="field_dateNaissance" type="text" class="form-control" name="dateNaissance" ngbDatepicker #dateNaissanceDp="ngbDatepicker" formControlName="dateNaissance"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateNaissanceDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nuance">Nuance</label>
+                    <input type="text" class="form-control" name="nuance" id="field_nuance"
+                           formControlName="nuance"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_profession">Profession</label>
+                    <input type="text" class="form-control" name="profession" id="field_profession"
+                           formControlName="profession"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_personnalite">Personnalite</label>
+                    <input type="text" class="form-control" name="personnalite" id="field_personnalite"
+                           formControlName="personnalite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sortant">Sortant</label>
+                    <input type="checkbox" class="form-control" name="sortant" id="field_sortant"
+                           formControlName="sortant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sexeSupp">Sexe Supp</label>
+                    <input type="text" class="form-control" name="sexeSupp" id="field_sexeSupp"
+                           formControlName="sexeSupp"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nomSupp">Nom Supp</label>
+                    <input type="text" class="form-control" name="nomSupp" id="field_nomSupp"
+                           formControlName="nomSupp"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prenomSupp">Prenom Supp</label>
+                    <input type="text" class="form-control" name="prenomSupp" id="field_prenomSupp"
+                           formControlName="prenomSupp"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateNaissanceSupp">Date Naissance Supp</label>
+                    <div class="input-group">
+                        <input id="field_dateNaissanceSupp" type="text" class="form-control" name="dateNaissanceSupp" ngbDatepicker #dateNaissanceSuppDp="ngbDatepicker" formControlName="dateNaissanceSupp"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateNaissanceSuppDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tourElection">Tour Election</label>
+                    <input type="text" class="form-control" name="tourElection" id="field_tourElection"
+                           formControlName="tourElection"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_elusen">Elusen</label>
+                    <select class="form-control" id="field_elusen" name="elusen" formControlName="elusen">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="senOption.id === editForm.get('elusen')!.value?.id ? editForm.get('elusen')!.value : senOption" *ngFor="let senOption of elusens; trackBy: trackById">{{ senOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_suppleantsen">Suppleantsen</label>
+                    <select class="form-control" id="field_suppleantsen" name="suppleantsen" formControlName="suppleantsen">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="senOption.id === editForm.get('suppleantsen')!.value?.id ? editForm.get('suppleantsen')!.value : senOption" *ngFor="let senOption of suppleantsens; trackBy: trackById">{{ senOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_csp">Csp</label>
+                    <select class="form-control" id="field_csp" name="csp" formControlName="csp">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cspOption.id === editForm.get('csp')!.value?.id ? editForm.get('csp')!.value : cspOption" *ngFor="let cspOption of csps; trackBy: trackById">{{ cspOption.cspcod }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dpt">Dpt</label>
+                    <select class="form-control" id="field_dpt" name="dpt" formControlName="dpt">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dptOption.id === editForm.get('dpt')!.value?.id ? editForm.get('dpt')!.value : dptOption" *ngFor="let dptOption of dpts; trackBy: trackById">{{ dptOption.dptnum }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

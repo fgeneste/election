@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span>Resultat Detailles</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-resultat-detaille" [routerLink]="['/resultat-detaille/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Resultat Detaille
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="resultatDetailles?.length === 0">
+        <span>No resultatDetailles found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="resultatDetailles && resultatDetailles.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>No Depot</span></th>
+                    <th scope="col" ><span>Sexe</span></th>
+                    <th scope="col" ><span>Nom</span></th>
+                    <th scope="col" ><span>Prenom</span></th>
+                    <th scope="col" ><span>Nuance</span></th>
+                    <th scope="col" ><span>Resultat Candidat</span></th>
+                    <th scope="col" ><span>Nuance Liste</span></th>
+                    <th scope="col" ><span>Libelle Liste</span></th>
+                    <th scope="col" ><span>Tete Liste</span></th>
+                    <th scope="col" ><span>Voix</span></th>
+                    <th scope="col" ><span>Voix On Ins</span></th>
+                    <th scope="col" ><span>Voix On Exp</span></th>
+                    <th scope="col" ><span>Sieges</span></th>
+                    <th scope="col" ><span>Resultat</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let resultatDetaille of resultatDetailles ;trackBy: trackId">
+                    <td><a [routerLink]="['/resultat-detaille', resultatDetaille.id, 'view']">{{ resultatDetaille.id }}</a></td>
+                    <td>{{ resultatDetaille.noDepot }}</td>
+                    <td>{{ resultatDetaille.sexe }}</td>
+                    <td>{{ resultatDetaille.nom }}</td>
+                    <td>{{ resultatDetaille.prenom }}</td>
+                    <td>{{ resultatDetaille.nuance }}</td>
+                    <td>{{ resultatDetaille.resultatCandidat }}</td>
+                    <td>{{ resultatDetaille.nuanceListe }}</td>
+                    <td>{{ resultatDetaille.libelleListe }}</td>
+                    <td>{{ resultatDetaille.teteListe }}</td>
+                    <td>{{ resultatDetaille.voix }}</td>
+                    <td>{{ resultatDetaille.voixOnIns }}</td>
+                    <td>{{ resultatDetaille.voixOnExp }}</td>
+                    <td>{{ resultatDetaille.sieges }}</td>
+                    <td>
+                        <div *ngIf="resultatDetaille.resultat">
+                            <a [routerLink]="['/resultat', resultatDetaille.resultat?.id, 'view']" >{{ resultatDetaille.resultat?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/resultat-detaille', resultatDetaille.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/resultat-detaille', resultatDetaille.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(resultatDetaille)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

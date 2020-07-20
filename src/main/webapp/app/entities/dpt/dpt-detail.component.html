@@ -1,0 +1,142 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dpt">
+            <h2><span>Dpt</span> {{ dpt.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Dptnum</span></dt>
+                <dd>
+                    <span>{{ dpt.dptnum }}</span>
+                </dd>
+                <dt><span>Dptcod</span></dt>
+                <dd>
+                    <span>{{ dpt.dptcod }}</span>
+                </dd>
+                <dt><span>Dptlib</span></dt>
+                <dd>
+                    <span>{{ dpt.dptlib }}</span>
+                </dd>
+                <dt><span>Dptnbrsen</span></dt>
+                <dd>
+                    <span>{{ dpt.dptnbrsen }}</span>
+                </dd>
+                <dt><span>Dptmodscrsen</span></dt>
+                <dd>
+                    <span>{{ dpt.dptmodscrsen }}</span>
+                </dd>
+                <dt><span>Dptser</span></dt>
+                <dd>
+                    <span>{{ dpt.dptser }}</span>
+                </dd>
+                <dt><span>Regcod</span></dt>
+                <dd>
+                    <span>{{ dpt.regcod }}</span>
+                </dd>
+                <dt><span>Dptnumtri</span></dt>
+                <dd>
+                    <span>{{ dpt.dptnumtri }}</span>
+                </dd>
+                <dt><span>Dptcodsirpas</span></dt>
+                <dd>
+                    <span>{{ dpt.dptcodsirpas }}</span>
+                </dd>
+                <dt><span>Dptlic</span></dt>
+                <dd>
+                    <span>{{ dpt.dptlic }}</span>
+                </dd>
+                <dt><span>Dptart</span></dt>
+                <dd>
+                    <span>{{ dpt.dptart }}</span>
+                </dd>
+                <dt><span>Dptlibtri</span></dt>
+                <dd>
+                    <span>{{ dpt.dptlibtri }}</span>
+                </dd>
+                <dt><span>Temvalcod</span></dt>
+                <dd>
+                    <span>{{ dpt.temvalcod }}</span>
+                </dd>
+                <dt><span>Evelic</span></dt>
+                <dd>
+                    <span>{{ dpt.evelic }}</span>
+                </dd>
+                <dt><span>Evelib</span></dt>
+                <dd>
+                    <span>{{ dpt.evelib }}</span>
+                </dd>
+                <dt><span>Evelil</span></dt>
+                <dd>
+                    <span>{{ dpt.evelil }}</span>
+                </dd>
+                <dt><span>Eveobs</span></dt>
+                <dd>
+                    <span>{{ dpt.eveobs }}</span>
+                </dd>
+                <dt><span>Dptser 2004</span></dt>
+                <dd>
+                    <span>{{ dpt.dptser2004 }}</span>
+                </dd>
+                <dt><span>Dptcmt</span></dt>
+                <dd>
+                    <span>{{ dpt.dptcmt }}</span>
+                </dd>
+                <dt><span>Dptcmtaff</span></dt>
+                <dd>
+                    <span>{{ dpt.dptcmtaff }}</span>
+                </dd>
+                <dt><span>Dptdatdeb</span></dt>
+                <dd>
+                    <span>{{ dpt.dptdatdeb }}</span>
+                </dd>
+                <dt><span>Dptdatfin</span></dt>
+                <dd>
+                    <span>{{ dpt.dptdatfin }}</span>
+                </dd>
+                <dt><span>Evetempub</span></dt>
+                <dd>
+                    <span>{{ dpt.evetempub }}</span>
+                </dd>
+                <dt><span>Dpturlcmp</span></dt>
+                <dd>
+                    <span>{{ dpt.dpturlcmp }}</span>
+                </dd>
+                <dt><span>Dptminintcod</span></dt>
+                <dd>
+                    <span>{{ dpt.dptminintcod }}</span>
+                </dd>
+                <dt><span>Syscredat</span></dt>
+                <dd>
+                    <span>{{ dpt.syscredat }}</span>
+                </dd>
+                <dt><span>Syscrelog</span></dt>
+                <dd>
+                    <span>{{ dpt.syscrelog }}</span>
+                </dd>
+                <dt><span>Sysmajdat</span></dt>
+                <dd>
+                    <span>{{ dpt.sysmajdat }}</span>
+                </dd>
+                <dt><span>Sysmajlog</span></dt>
+                <dd>
+                    <span>{{ dpt.sysmajlog }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dpt', dpt.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fichier">
+            <h2><span>Fichier</span> {{ fichier.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Filename</span></dt>
+                <dd>
+                    <span>{{ fichier.filename }}</span>
+                </dd>
+                <dt><span>Path</span></dt>
+                <dd>
+                    <span>{{ fichier.path }}</span>
+                </dd>
+                <dt><span>Type</span></dt>
+                <dd>
+                    <span>{{ fichier.type }}</span>
+                </dd>
+                <dt><span>Traite</span></dt>
+                <dd>
+                    <span>{{ fichier.traite }}</span>
+                </dd>
+                <dt><span>Date Traitement</span></dt>
+                <dd>
+                    <span>{{ fichier.dateTraitement }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fichier', fichier.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

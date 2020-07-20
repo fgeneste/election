@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-csp-heading">Create or edit a Csp</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cspcod">Cspcod</label>
+                    <input type="text" class="form-control" name="cspcod" id="field_cspcod"
+                           formControlName="cspcod"/>
+                    <div *ngIf="editForm.get('cspcod')!.invalid && (editForm.get('cspcod')!.dirty || editForm.get('cspcod')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cspcod')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_catprocod">Catprocod</label>
+                    <input type="text" class="form-control" name="catprocod" id="field_catprocod"
+                           formControlName="catprocod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cspfamcod">Cspfamcod</label>
+                    <input type="text" class="form-control" name="cspfamcod" id="field_cspfamcod"
+                           formControlName="cspfamcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_csplib">Csplib</label>
+                    <input type="text" class="form-control" name="csplib" id="field_csplib"
+                           formControlName="csplib"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cspnumtri">Cspnumtri</label>
+                    <input type="number" class="form-control" name="cspnumtri" id="field_cspnumtri"
+                           formControlName="cspnumtri"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syscredat">Syscredat</label>
+                    <div class="input-group">
+                        <input id="field_syscredat" type="text" class="form-control" name="syscredat" ngbDatepicker #syscredatDp="ngbDatepicker" formControlName="syscredat"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="syscredatDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syscrelog">Syscrelog</label>
+                    <input type="text" class="form-control" name="syscrelog" id="field_syscrelog"
+                           formControlName="syscrelog"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sysmajdat">Sysmajdat</label>
+                    <div class="input-group">
+                        <input id="field_sysmajdat" type="text" class="form-control" name="sysmajdat" ngbDatepicker #sysmajdatDp="ngbDatepicker" formControlName="sysmajdat"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="sysmajdatDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sysmajlog">Sysmajlog</label>
+                    <input type="text" class="form-control" name="sysmajlog" id="field_sysmajlog"
+                           formControlName="sysmajlog"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

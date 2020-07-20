@@ -1,0 +1,286 @@
+entity Candidat {
+	libelleDepartement String,
+	numeroDepot Long,
+	numeroDepotListe Long,
+	libelleListe String,
+	noOrdreListe Long,
+	sexe Sexe,
+	nom String,
+	prenom String,
+	dateNaissance LocalDate,
+	nuance String,
+	profession String,
+	personnalite String
+	sortant Boolean,
+	sexeSupp String,
+	nomSupp String,
+	prenomSupp String,
+	dateNaissanceSupp LocalDate,
+	isElu Boolean
+}
+
+entity Fichier {
+	filename String unique,
+	path String,
+	type String,
+	traite Boolean,
+	dateTraitement Instant
+}
+
+entity Csp {
+	cspcod String required,
+	catprocod String,
+	cspfamcod String,
+	csplib String,
+	cspnumtri Long,
+	syscredat LocalDate,
+	syscrelog String,
+	sysmajdat LocalDate,
+	sysmajlog String
+}
+
+entity Dpt {
+	dptnum String,
+	dptcod String,
+	dptlib String,
+	dptnbrsen Long,
+	dptmodscrsen String,
+	dptser String,
+	regcod String,
+	dptnumtri Long,
+	dptcodsirpas String,
+	dptlic String,
+	dptart String,
+	dptlibtri String,
+	temvalcod String,
+	evelic String,
+	evelib String,
+	evelil String,
+	eveobs String,
+	dptser2004 String,
+	dptcmt String,
+	dptcmtaff String,
+	dptdatdeb LocalDate,
+	dptdatfin LocalDate,
+	evetempub String,
+	dpturlcmp String,
+	dptminintcod String,
+	syscredat LocalDate,
+	syscrelog String,
+	sysmajdat LocalDate,
+	sysmajlog String
+}
+
+entity Elu {
+	libelleDepartement String,
+	numeroDepot Long,
+	numeroDepotListe Long,
+	libelleListe String,
+	noOrdreListe Long,
+	sexe Sexe,
+	nom String,
+	prenom String,
+	dateNaissance LocalDate,
+	nuance String,
+	profession String,
+	personnalite String
+	sortant Boolean,
+	sexeSupp String,
+	nomSupp String,
+	prenomSupp String,
+	dateNaissanceSupp LocalDate,
+	tourElection String
+}
+
+entity Sen {
+	senmat String,
+	quacod String,
+	sennomuse String,
+	sennompat String,
+	sennommar String,
+	sennomtec String,
+	senprenomuse String,
+	senprenomciv String,
+	sendatnai LocalDate,
+	senlienai String,
+	sendatdec LocalDate,
+	etasencod String,
+	sendespro String,
+	pcscod String,
+	catprocod String,
+	senrngprt Long,
+	sengrppolcodcou String,
+	sengrppolliccou String,
+	sentypappcou String,
+	sencomcodcou String,
+	sencomliccou String,
+	sencirnumcou Long,
+	sencircou String,
+	senburliccou String,
+	senema String,
+	sennumtelsen String,
+	sendiplome String,
+	sendecora String,
+	sendatpreele Instant,
+	indid Long,
+	sennomusecap String,
+	senpagper String,
+	senrngprtcod String,
+	parpolorgcod String,
+	senliedec String,
+	sendptnumnai Long,
+	sendptnumdec Long,
+	senauttra String,
+	senlog String,
+	sencrinom String,
+	senfem String,
+	senautema String,
+	senautgrpsen String,
+	senautpagper String,
+	sennbrque Long,
+	sennomdis String,
+	numsen String,
+	sennumsie Long,
+	sennbrvid Long,
+	sennomdit String,
+	titnobcod String
+}
+
+entity Resultat {
+   	dateExport LocalDate, 
+	numeroDepartement String,
+	libelleDepartement String,
+	noTour String,
+	inscrits Double,
+	abstentions Double,
+	absOnIns Double,
+	votants Double,
+	votOnIns Double,
+	blancs Double,
+	blancsOnIns Double
+	blancsOnVot Double
+	nuls Double,
+	nulsOnIns Double,
+	nulsOnVot Double,
+	exprime Double,
+	expOnIns Double,
+	expOnVot Double
+}
+
+entity ResultatDetaille {
+	noDepot String,
+	sexe Sexe,
+	nom String,
+	prenom String,
+	nuance String,
+	resultatCandidat String,
+	nuanceListe String,//list
+	libelleListe String,//list
+	teteListe String,//list
+	voix Double,
+	voixOnIns Double,
+	voixOnExp Double,
+	sieges Integer//list
+}
+
+entity Parpol {
+	tenpolcod String,
+	orgcod String,
+	typparpolcod String,
+	typorgcod String,
+	eveobs String,
+	orgart String,
+	orgnumtri Integer,
+	orgdatfin LocalDate,
+	orgnumtie String,
+	orgurlsim String,
+	orgurlcmp String,
+	orgtemannu String,
+	evetempub String,
+	syscredat LocalDate,
+	syscrelog String,
+	sysmajdat LocalDate,
+	sysmajlog String,
+	evelil String,
+	evelib String,
+	evelic String,
+	temvalcod String,
+	orgdatcre LocalDate
+}
+
+entity Foncandid {
+	foncandidcod String,
+	foncandidlibfem String,
+	foncandidlib String,
+	foncandidlic String,
+	foncandidlicfem String
+}
+
+entity Association {
+	score Double
+}
+
+enum Sexe {
+    M, F
+}
+
+relationship OneToMany {
+  Csp to Candidat{Csp(cspcod)}
+}
+
+relationship OneToMany {
+  Dpt to Candidat{Dpt(dptnum)}
+}
+
+relationship OneToOne {
+  Candidat{candidatreconnu} to Sen
+}
+
+relationship OneToOne {
+  Candidat{suppleantreconnu} to Sen
+}
+
+relationship OneToMany {
+  Csp to Elu{Csp(cspcod)}
+}
+
+relationship OneToMany {
+  Dpt to Elu{Dpt(dptnum)}
+}
+
+relationship OneToOne {
+  Elu{elusen} to Sen
+}
+
+relationship OneToOne {
+  Elu{suppleantsen} to Sen
+}
+
+relationship OneToMany {
+  Resultat to ResultatDetaille
+}
+
+relationship OneToOne {
+  Association to Candidat
+}
+
+relationship OneToOne {
+  Association to Sen
+}
+
+relationship OneToOne {
+  Candidat to Elu
+}
+
+// Set pagination options
+paginate Candidat with infinite-scroll
+paginate Sen, Csp with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

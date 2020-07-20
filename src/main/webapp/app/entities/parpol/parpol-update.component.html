@@ -1,0 +1,174 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-parpol-heading">Create or edit a Parpol</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenpolcod">Tenpolcod</label>
+                    <input type="text" class="form-control" name="tenpolcod" id="field_tenpolcod"
+                           formControlName="tenpolcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgcod">Orgcod</label>
+                    <input type="text" class="form-control" name="orgcod" id="field_orgcod"
+                           formControlName="orgcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typparpolcod">Typparpolcod</label>
+                    <input type="text" class="form-control" name="typparpolcod" id="field_typparpolcod"
+                           formControlName="typparpolcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typorgcod">Typorgcod</label>
+                    <input type="text" class="form-control" name="typorgcod" id="field_typorgcod"
+                           formControlName="typorgcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_eveobs">Eveobs</label>
+                    <input type="text" class="form-control" name="eveobs" id="field_eveobs"
+                           formControlName="eveobs"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgart">Orgart</label>
+                    <input type="text" class="form-control" name="orgart" id="field_orgart"
+                           formControlName="orgart"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgnumtri">Orgnumtri</label>
+                    <input type="number" class="form-control" name="orgnumtri" id="field_orgnumtri"
+                           formControlName="orgnumtri"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgdatfin">Orgdatfin</label>
+                    <div class="input-group">
+                        <input id="field_orgdatfin" type="text" class="form-control" name="orgdatfin" ngbDatepicker #orgdatfinDp="ngbDatepicker" formControlName="orgdatfin"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="orgdatfinDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgnumtie">Orgnumtie</label>
+                    <input type="text" class="form-control" name="orgnumtie" id="field_orgnumtie"
+                           formControlName="orgnumtie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgurlsim">Orgurlsim</label>
+                    <input type="text" class="form-control" name="orgurlsim" id="field_orgurlsim"
+                           formControlName="orgurlsim"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgurlcmp">Orgurlcmp</label>
+                    <input type="text" class="form-control" name="orgurlcmp" id="field_orgurlcmp"
+                           formControlName="orgurlcmp"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgtemannu">Orgtemannu</label>
+                    <input type="text" class="form-control" name="orgtemannu" id="field_orgtemannu"
+                           formControlName="orgtemannu"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evetempub">Evetempub</label>
+                    <input type="text" class="form-control" name="evetempub" id="field_evetempub"
+                           formControlName="evetempub"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syscredat">Syscredat</label>
+                    <div class="input-group">
+                        <input id="field_syscredat" type="text" class="form-control" name="syscredat" ngbDatepicker #syscredatDp="ngbDatepicker" formControlName="syscredat"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="syscredatDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syscrelog">Syscrelog</label>
+                    <input type="text" class="form-control" name="syscrelog" id="field_syscrelog"
+                           formControlName="syscrelog"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sysmajdat">Sysmajdat</label>
+                    <div class="input-group">
+                        <input id="field_sysmajdat" type="text" class="form-control" name="sysmajdat" ngbDatepicker #sysmajdatDp="ngbDatepicker" formControlName="sysmajdat"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="sysmajdatDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sysmajlog">Sysmajlog</label>
+                    <input type="text" class="form-control" name="sysmajlog" id="field_sysmajlog"
+                           formControlName="sysmajlog"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evelil">Evelil</label>
+                    <input type="text" class="form-control" name="evelil" id="field_evelil"
+                           formControlName="evelil"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evelib">Evelib</label>
+                    <input type="text" class="form-control" name="evelib" id="field_evelib"
+                           formControlName="evelib"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evelic">Evelic</label>
+                    <input type="text" class="form-control" name="evelic" id="field_evelic"
+                           formControlName="evelic"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_temvalcod">Temvalcod</label>
+                    <input type="text" class="form-control" name="temvalcod" id="field_temvalcod"
+                           formControlName="temvalcod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orgdatcre">Orgdatcre</label>
+                    <div class="input-group">
+                        <input id="field_orgdatcre" type="text" class="form-control" name="orgdatcre" ngbDatepicker #orgdatcreDp="ngbDatepicker" formControlName="orgdatcre"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="orgdatcreDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

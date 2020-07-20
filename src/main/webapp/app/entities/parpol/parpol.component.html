@@ -1,0 +1,103 @@
+<div>
+    <h2 id="page-heading">
+        <span>Parpols</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-parpol" [routerLink]="['/parpol/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Parpol
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="parpols?.length === 0">
+        <span>No parpols found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="parpols && parpols.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Tenpolcod</span></th>
+                    <th scope="col" ><span>Orgcod</span></th>
+                    <th scope="col" ><span>Typparpolcod</span></th>
+                    <th scope="col" ><span>Typorgcod</span></th>
+                    <th scope="col" ><span>Eveobs</span></th>
+                    <th scope="col" ><span>Orgart</span></th>
+                    <th scope="col" ><span>Orgnumtri</span></th>
+                    <th scope="col" ><span>Orgdatfin</span></th>
+                    <th scope="col" ><span>Orgnumtie</span></th>
+                    <th scope="col" ><span>Orgurlsim</span></th>
+                    <th scope="col" ><span>Orgurlcmp</span></th>
+                    <th scope="col" ><span>Orgtemannu</span></th>
+                    <th scope="col" ><span>Evetempub</span></th>
+                    <th scope="col" ><span>Syscredat</span></th>
+                    <th scope="col" ><span>Syscrelog</span></th>
+                    <th scope="col" ><span>Sysmajdat</span></th>
+                    <th scope="col" ><span>Sysmajlog</span></th>
+                    <th scope="col" ><span>Evelil</span></th>
+                    <th scope="col" ><span>Evelib</span></th>
+                    <th scope="col" ><span>Evelic</span></th>
+                    <th scope="col" ><span>Temvalcod</span></th>
+                    <th scope="col" ><span>Orgdatcre</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let parpol of parpols ;trackBy: trackId">
+                    <td><a [routerLink]="['/parpol', parpol.id, 'view']">{{ parpol.id }}</a></td>
+                    <td>{{ parpol.tenpolcod }}</td>
+                    <td>{{ parpol.orgcod }}</td>
+                    <td>{{ parpol.typparpolcod }}</td>
+                    <td>{{ parpol.typorgcod }}</td>
+                    <td>{{ parpol.eveobs }}</td>
+                    <td>{{ parpol.orgart }}</td>
+                    <td>{{ parpol.orgnumtri }}</td>
+                    <td>{{ parpol.orgdatfin | date:'mediumDate' }}</td>
+                    <td>{{ parpol.orgnumtie }}</td>
+                    <td>{{ parpol.orgurlsim }}</td>
+                    <td>{{ parpol.orgurlcmp }}</td>
+                    <td>{{ parpol.orgtemannu }}</td>
+                    <td>{{ parpol.evetempub }}</td>
+                    <td>{{ parpol.syscredat | date:'mediumDate' }}</td>
+                    <td>{{ parpol.syscrelog }}</td>
+                    <td>{{ parpol.sysmajdat | date:'mediumDate' }}</td>
+                    <td>{{ parpol.sysmajlog }}</td>
+                    <td>{{ parpol.evelil }}</td>
+                    <td>{{ parpol.evelib }}</td>
+                    <td>{{ parpol.evelic }}</td>
+                    <td>{{ parpol.temvalcod }}</td>
+                    <td>{{ parpol.orgdatcre | date:'mediumDate' }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/parpol', parpol.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/parpol', parpol.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(parpol)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

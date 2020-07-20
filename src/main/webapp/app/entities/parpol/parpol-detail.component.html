@@ -1,0 +1,114 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="parpol">
+            <h2><span>Parpol</span> {{ parpol.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Tenpolcod</span></dt>
+                <dd>
+                    <span>{{ parpol.tenpolcod }}</span>
+                </dd>
+                <dt><span>Orgcod</span></dt>
+                <dd>
+                    <span>{{ parpol.orgcod }}</span>
+                </dd>
+                <dt><span>Typparpolcod</span></dt>
+                <dd>
+                    <span>{{ parpol.typparpolcod }}</span>
+                </dd>
+                <dt><span>Typorgcod</span></dt>
+                <dd>
+                    <span>{{ parpol.typorgcod }}</span>
+                </dd>
+                <dt><span>Eveobs</span></dt>
+                <dd>
+                    <span>{{ parpol.eveobs }}</span>
+                </dd>
+                <dt><span>Orgart</span></dt>
+                <dd>
+                    <span>{{ parpol.orgart }}</span>
+                </dd>
+                <dt><span>Orgnumtri</span></dt>
+                <dd>
+                    <span>{{ parpol.orgnumtri }}</span>
+                </dd>
+                <dt><span>Orgdatfin</span></dt>
+                <dd>
+                    <span>{{ parpol.orgdatfin }}</span>
+                </dd>
+                <dt><span>Orgnumtie</span></dt>
+                <dd>
+                    <span>{{ parpol.orgnumtie }}</span>
+                </dd>
+                <dt><span>Orgurlsim</span></dt>
+                <dd>
+                    <span>{{ parpol.orgurlsim }}</span>
+                </dd>
+                <dt><span>Orgurlcmp</span></dt>
+                <dd>
+                    <span>{{ parpol.orgurlcmp }}</span>
+                </dd>
+                <dt><span>Orgtemannu</span></dt>
+                <dd>
+                    <span>{{ parpol.orgtemannu }}</span>
+                </dd>
+                <dt><span>Evetempub</span></dt>
+                <dd>
+                    <span>{{ parpol.evetempub }}</span>
+                </dd>
+                <dt><span>Syscredat</span></dt>
+                <dd>
+                    <span>{{ parpol.syscredat }}</span>
+                </dd>
+                <dt><span>Syscrelog</span></dt>
+                <dd>
+                    <span>{{ parpol.syscrelog }}</span>
+                </dd>
+                <dt><span>Sysmajdat</span></dt>
+                <dd>
+                    <span>{{ parpol.sysmajdat }}</span>
+                </dd>
+                <dt><span>Sysmajlog</span></dt>
+                <dd>
+                    <span>{{ parpol.sysmajlog }}</span>
+                </dd>
+                <dt><span>Evelil</span></dt>
+                <dd>
+                    <span>{{ parpol.evelil }}</span>
+                </dd>
+                <dt><span>Evelib</span></dt>
+                <dd>
+                    <span>{{ parpol.evelib }}</span>
+                </dd>
+                <dt><span>Evelic</span></dt>
+                <dd>
+                    <span>{{ parpol.evelic }}</span>
+                </dd>
+                <dt><span>Temvalcod</span></dt>
+                <dd>
+                    <span>{{ parpol.temvalcod }}</span>
+                </dd>
+                <dt><span>Orgdatcre</span></dt>
+                <dd>
+                    <span>{{ parpol.orgdatcre }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/parpol', parpol.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

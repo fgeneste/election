@@ -1,0 +1,117 @@
+<div>
+    <h2 id="page-heading">
+        <span>Dpts</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dpt" [routerLink]="['/dpt/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Dpt
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="dpts?.length === 0">
+        <span>No dpts found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="dpts && dpts.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Dptnum</span></th>
+                    <th scope="col" ><span>Dptcod</span></th>
+                    <th scope="col" ><span>Dptlib</span></th>
+                    <th scope="col" ><span>Dptnbrsen</span></th>
+                    <th scope="col" ><span>Dptmodscrsen</span></th>
+                    <th scope="col" ><span>Dptser</span></th>
+                    <th scope="col" ><span>Regcod</span></th>
+                    <th scope="col" ><span>Dptnumtri</span></th>
+                    <th scope="col" ><span>Dptcodsirpas</span></th>
+                    <th scope="col" ><span>Dptlic</span></th>
+                    <th scope="col" ><span>Dptart</span></th>
+                    <th scope="col" ><span>Dptlibtri</span></th>
+                    <th scope="col" ><span>Temvalcod</span></th>
+                    <th scope="col" ><span>Evelic</span></th>
+                    <th scope="col" ><span>Evelib</span></th>
+                    <th scope="col" ><span>Evelil</span></th>
+                    <th scope="col" ><span>Eveobs</span></th>
+                    <th scope="col" ><span>Dptser 2004</span></th>
+                    <th scope="col" ><span>Dptcmt</span></th>
+                    <th scope="col" ><span>Dptcmtaff</span></th>
+                    <th scope="col" ><span>Dptdatdeb</span></th>
+                    <th scope="col" ><span>Dptdatfin</span></th>
+                    <th scope="col" ><span>Evetempub</span></th>
+                    <th scope="col" ><span>Dpturlcmp</span></th>
+                    <th scope="col" ><span>Dptminintcod</span></th>
+                    <th scope="col" ><span>Syscredat</span></th>
+                    <th scope="col" ><span>Syscrelog</span></th>
+                    <th scope="col" ><span>Sysmajdat</span></th>
+                    <th scope="col" ><span>Sysmajlog</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dpt of dpts ;trackBy: trackId">
+                    <td><a [routerLink]="['/dpt', dpt.id, 'view']">{{ dpt.id }}</a></td>
+                    <td>{{ dpt.dptnum }}</td>
+                    <td>{{ dpt.dptcod }}</td>
+                    <td>{{ dpt.dptlib }}</td>
+                    <td>{{ dpt.dptnbrsen }}</td>
+                    <td>{{ dpt.dptmodscrsen }}</td>
+                    <td>{{ dpt.dptser }}</td>
+                    <td>{{ dpt.regcod }}</td>
+                    <td>{{ dpt.dptnumtri }}</td>
+                    <td>{{ dpt.dptcodsirpas }}</td>
+                    <td>{{ dpt.dptlic }}</td>
+                    <td>{{ dpt.dptart }}</td>
+                    <td>{{ dpt.dptlibtri }}</td>
+                    <td>{{ dpt.temvalcod }}</td>
+                    <td>{{ dpt.evelic }}</td>
+                    <td>{{ dpt.evelib }}</td>
+                    <td>{{ dpt.evelil }}</td>
+                    <td>{{ dpt.eveobs }}</td>
+                    <td>{{ dpt.dptser2004 }}</td>
+                    <td>{{ dpt.dptcmt }}</td>
+                    <td>{{ dpt.dptcmtaff }}</td>
+                    <td>{{ dpt.dptdatdeb | date:'mediumDate' }}</td>
+                    <td>{{ dpt.dptdatfin | date:'mediumDate' }}</td>
+                    <td>{{ dpt.evetempub }}</td>
+                    <td>{{ dpt.dpturlcmp }}</td>
+                    <td>{{ dpt.dptminintcod }}</td>
+                    <td>{{ dpt.syscredat | date:'mediumDate' }}</td>
+                    <td>{{ dpt.syscrelog }}</td>
+                    <td>{{ dpt.sysmajdat | date:'mediumDate' }}</td>
+                    <td>{{ dpt.sysmajlog }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/dpt', dpt.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/dpt', dpt.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(dpt)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

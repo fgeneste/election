@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="resultat">
+            <h2><span>Resultat</span> {{ resultat.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Date Export</span></dt>
+                <dd>
+                    <span>{{ resultat.dateExport }}</span>
+                </dd>
+                <dt><span>Numero Departement</span></dt>
+                <dd>
+                    <span>{{ resultat.numeroDepartement }}</span>
+                </dd>
+                <dt><span>Libelle Departement</span></dt>
+                <dd>
+                    <span>{{ resultat.libelleDepartement }}</span>
+                </dd>
+                <dt><span>No Tour</span></dt>
+                <dd>
+                    <span>{{ resultat.noTour }}</span>
+                </dd>
+                <dt><span>Inscrits</span></dt>
+                <dd>
+                    <span>{{ resultat.inscrits }}</span>
+                </dd>
+                <dt><span>Abstentions</span></dt>
+                <dd>
+                    <span>{{ resultat.abstentions }}</span>
+                </dd>
+                <dt><span>Abs On Ins</span></dt>
+                <dd>
+                    <span>{{ resultat.absOnIns }}</span>
+                </dd>
+                <dt><span>Votants</span></dt>
+                <dd>
+                    <span>{{ resultat.votants }}</span>
+                </dd>
+                <dt><span>Vot On Ins</span></dt>
+                <dd>
+                    <span>{{ resultat.votOnIns }}</span>
+                </dd>
+                <dt><span>Blancs</span></dt>
+                <dd>
+                    <span>{{ resultat.blancs }}</span>
+                </dd>
+                <dt><span>Blancs On Ins</span></dt>
+                <dd>
+                    <span>{{ resultat.blancsOnIns }}</span>
+                </dd>
+                <dt><span>Blancs On Vot</span></dt>
+                <dd>
+                    <span>{{ resultat.blancsOnVot }}</span>
+                </dd>
+                <dt><span>Nuls</span></dt>
+                <dd>
+                    <span>{{ resultat.nuls }}</span>
+                </dd>
+                <dt><span>Nuls On Ins</span></dt>
+                <dd>
+                    <span>{{ resultat.nulsOnIns }}</span>
+                </dd>
+                <dt><span>Nuls On Vot</span></dt>
+                <dd>
+                    <span>{{ resultat.nulsOnVot }}</span>
+                </dd>
+                <dt><span>Exprime</span></dt>
+                <dd>
+                    <span>{{ resultat.exprime }}</span>
+                </dd>
+                <dt><span>Exp On Ins</span></dt>
+                <dd>
+                    <span>{{ resultat.expOnIns }}</span>
+                </dd>
+                <dt><span>Exp On Vot</span></dt>
+                <dd>
+                    <span>{{ resultat.expOnVot }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/resultat', resultat.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

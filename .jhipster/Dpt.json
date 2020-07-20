@@ -1,0 +1,146 @@
+{
+  "name": "Dpt",
+  "fields": [
+    {
+      "fieldName": "dptnum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptlib",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptnbrsen",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dptmodscrsen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptnumtri",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dptcodsirpas",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptlic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptart",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptlibtri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "temvalcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evelic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evelib",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evelil",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "eveobs",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptser2004",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptcmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptcmtaff",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptdatdeb",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dptdatfin",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "evetempub",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dpturlcmp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dptminintcod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "syscredat",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "syscrelog",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sysmajdat",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "sysmajlog",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "candidat",
+      "otherEntityRelationshipName": "dpt",
+      "relationshipName": "candidat"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "elu",
+      "otherEntityRelationshipName": "dpt",
+      "relationshipName": "elu"
+    }
+  ],
+  "changelogDate": "20200720092614",
+  "entityTableName": "dpt",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

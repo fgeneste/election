@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Candidat.
+    -->
+    <changeSet id="20200720092314-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="candidatreconnu_id"
+                                 baseTableName="candidat"
+                                 constraintName="fk_candidat_candidatreconnu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sen"/>
+
+        <addForeignKeyConstraint baseColumnNames="suppleantreconnu_id"
+                                 baseTableName="candidat"
+                                 constraintName="fk_candidat_suppleantreconnu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sen"/>
+
+        <addForeignKeyConstraint baseColumnNames="elu_id"
+                                 baseTableName="candidat"
+                                 constraintName="fk_candidat_elu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="elu"/>
+
+        <addForeignKeyConstraint baseColumnNames="csp_id"
+                                 baseTableName="candidat"
+                                 constraintName="fk_candidat_csp_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="csp"/>
+
+        <addForeignKeyConstraint baseColumnNames="dpt_id"
+                                 baseTableName="candidat"
+                                 constraintName="fk_candidat_dpt_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dpt"/>
+
+    </changeSet>
+</databaseChangeLog>

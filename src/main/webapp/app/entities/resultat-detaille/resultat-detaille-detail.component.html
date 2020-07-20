@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="resultatDetaille">
+            <h2><span>Resultat Detaille</span> {{ resultatDetaille.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>No Depot</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.noDepot }}</span>
+                </dd>
+                <dt><span>Sexe</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.sexe }}</span>
+                </dd>
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.nom }}</span>
+                </dd>
+                <dt><span>Prenom</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.prenom }}</span>
+                </dd>
+                <dt><span>Nuance</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.nuance }}</span>
+                </dd>
+                <dt><span>Resultat Candidat</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.resultatCandidat }}</span>
+                </dd>
+                <dt><span>Nuance Liste</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.nuanceListe }}</span>
+                </dd>
+                <dt><span>Libelle Liste</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.libelleListe }}</span>
+                </dd>
+                <dt><span>Tete Liste</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.teteListe }}</span>
+                </dd>
+                <dt><span>Voix</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.voix }}</span>
+                </dd>
+                <dt><span>Voix On Ins</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.voixOnIns }}</span>
+                </dd>
+                <dt><span>Voix On Exp</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.voixOnExp }}</span>
+                </dd>
+                <dt><span>Sieges</span></dt>
+                <dd>
+                    <span>{{ resultatDetaille.sieges }}</span>
+                </dd>
+                <dt><span>Resultat</span></dt>
+                <dd>
+                    <div *ngIf="resultatDetaille.resultat">
+                        <a [routerLink]="['/resultat', resultatDetaille.resultat?.id, 'view']">{{ resultatDetaille.resultat?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/resultat-detaille', resultatDetaille.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
